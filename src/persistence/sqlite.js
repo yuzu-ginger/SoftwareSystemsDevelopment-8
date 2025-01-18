@@ -44,7 +44,8 @@ async function getItems() {
             acc(
                 rows.map(item =>
                     Object.assign({}, item, {
-                        completed: item.complated === 1,
+                        completed: !!item.completed
+                        // completed: item.complated === 1,
                     }),
                 ),
             );
@@ -59,7 +60,8 @@ async function getItem(id) {
             acc(
                 rows.map(item =>
                     Object.assign({}, item, {
-                        completed: item.completed === 1,
+                        completed: !!item.completed
+                        // completed: item.completed === 1,
                     }),
                 )[0],
             );
